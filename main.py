@@ -94,4 +94,5 @@ def main():
     send_slack_message(message)
 
 if __name__ == "__main__":
+    print("✅ [START] 코드 실행됨")  # ← 여기에 추가!
     main()
