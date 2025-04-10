@@ -72,11 +72,13 @@ def get_meal_count_message():
     lunch_row = rows[1]
     dinner_row = rows[2]
 
+    print(f"[DEBUG] 전체 헤더: {header}")
+    print(f"[DEBUG] 오늘 날짜 (formatted_date): '{formatted_date}'")
+
     target_col = None
     for idx, col in enumerate(header):
-        cleaned_col = col.strip()
-        print(f"[DEBUG] 헤더 {idx}: '{cleaned_col}'")  # ← 디버깅 출력 추가
-        if formatted_date == cleaned_col:
+        print(f"[DEBUG] 헤더[{idx}] = '{col.strip()}'")
+        if formatted_date.strip() == col.strip():
             target_col = idx
             break
 
