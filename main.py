@@ -64,21 +64,18 @@ def get_meal_count_message():
 
     print(f"[INFO] 시트에서 {len(rows)}줄 로드됨")
 
-    if len(rows) < 3:
-        print("❌ 데이터가 부족합니다 (헤더, 중식, 석식 필요)")
-        sys.exit(1)
-
-    header = rows[0]
-    lunch_row = rows[1]
-    dinner_row = rows[2]
+    # ✅ 날짜는 19행 (index 18), 중식은 20행 (index 19), 석식은 21행 (index 20)
+    header = rows[18]
+    lunch_row = rows[19]
+    dinner_row = rows[20]
 
     print(f"[DEBUG] 전체 헤더: {header}")
     print(f"[DEBUG] 오늘 날짜 (formatted_date): '{formatted_date}'")
 
     target_col = None
     for idx, col in enumerate(header):
-        print(f"[DEBUG] 헤더[{idx}] = '{col.strip()}'")
-        if formatted_date.strip() == col.strip():
+        print(f"[DEBUG] 헤더[{idx}] = '{col}'")
+        if formatted_date == col.strip():
             target_col = idx
             break
 
