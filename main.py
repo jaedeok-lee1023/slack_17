@@ -17,7 +17,7 @@ HOLIDAYS = {
 # 📅 오늘 날짜
 today = datetime.date.today()
 today_str = today.strftime("%Y-%m-%d")
-formatted_date = today.strftime('%-m월 %-d일')
+formatted_date = today.strftime('%m월 %d일')  
 
 print(f"[INFO] 오늘 날짜: {formatted_date}")
 
