@@ -39,7 +39,7 @@ def send_slack_message(message):
 
 # 📊 스프레드시트에서 식수 인원 가져오기
 def get_meal_count_message():
-    csv_url = "https://docs.google.com/spreadsheets/d/13al3WiKqEEQKN-UofBq_wzmcWSKte0ptWSC79kWFO_w/export?format=csv&gid=1135001380"
+    csv_url = "https://docs.google.com/spreadsheets/d/19YaBfbuX2PGdwso0iyVan0kd2G7wB0DE/edit?gid=1938075870#gid=1938075870"
     response = requests.get(csv_url)
     response.encoding = "utf-8"
 
