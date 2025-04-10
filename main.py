@@ -39,18 +39,16 @@ def send_slack_message(message):
 
 # 📊 스프레드시트에서 식수 인원 가져오기
 def get_meal_count_message():
-    csv_url = "https://docs.google.com/spreadsheets/d/19YaBfbuX2PGdwso0iyVan0kd2G7wB0DE/edit?gid=1938075870#gid=1938075870"
+    csv_url = "https://docs.google.com/spreadsheets/d/19YaBfbuX2PGdwso0iyVan0kd2G7wB0DE/export?format=csv&gid=1938075870"
     response = requests.get(csv_url)
     response.encoding = "utf-8"
 
     rows = list(csv.reader(response.text.splitlines()))
 
-    # 첫 줄은 날짜가 들어 있는 열
     header = rows[0]
     lunch_row = rows[1]
     dinner_row = rows[2]
 
-    # 오늘 날짜에 해당하는 열 찾기
     target_col = None
     for idx, col in enumerate(header):
         if formatted_date in col:
