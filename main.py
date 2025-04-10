@@ -29,7 +29,7 @@ if today_str in HOLIDAYS:
 # 🔐 환경 변수 로드
 load_dotenv()
 SLACK_TOKEN = os.environ.get("SLACK_TOKEN")
-SLACK_CHANNEL = os.environ.get("SLACK_CHANNEL") or "#general"
+SLACK_CHANNEL = os.environ.get("SLACK_CHANNEL") or "#슬랙봇테스트냠냠"
 
 if not SLACK_TOKEN:
     print("❌ SLACK_TOKEN 환경 변수가 비어 있습니다.")
