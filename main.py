@@ -74,7 +74,9 @@ def get_meal_count_message():
 
     target_col = None
     for idx, col in enumerate(header):
-        if formatted_date in col:
+        cleaned_col = col.strip()
+        print(f"[DEBUG] 헤더 {idx}: '{cleaned_col}'")  # ← 디버깅 출력 추가
+        if formatted_date == cleaned_col:
             target_col = idx
             break
 
