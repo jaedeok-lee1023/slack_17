@@ -37,9 +37,15 @@ def send_slack_message(message, channel):
         print(f"⚠️ 슬랙 전송 에러: {e}")
 
 def get_meal_count_message():
+    import json
+
     # 🔹 구글 시트 인증
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name('google_creds.json', scope)
+
+    # 👉 GitHub Secrets에서 GOOGLE_CREDS_JSON 읽어서 인증하기
+    creds_json = os.environ.get("GOOGLE_CREDS_JSON")
+    creds_dict = json.loads(creds_json)
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
     client = gspread.authorize(creds)
 
     # 🔹 스프레드시트 열기
