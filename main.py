@@ -45,22 +45,28 @@ def send_slack_message(message, channel):
 def main():
     for cluster in clusters:
         # 메시지 제목 설정
-        header = f":loudspeaker: *『인사총무팀 공지』* <!channel>\n\n"
+        header = f":loudspeaker: *『인사총무팀 공지』* \n\n"
 
         notice_msg = (
-            f"안녕하세요? 평택 클러스터 구성원 여러분\n*평택 클러스터 출/퇴근 셔틀 이용 관련 안내사항 Remind* 공유 드립니다.\n"
-            f"*（전체공지_매주1회）*\n\n"
+            f"안녕하세요? 평택 클러스터 구성원 여러분! 인사총무팀 입니다. :blush:\n"
             f"\n"
+            f"* 지게차 관련 사항 * 을 아래와 같이 공지 드리오니 협조 부탁드리겠습니다.\n\n"
             f"\n"
-            f"*첨부:one: - <https://50072f98-e1d6-4b35-b1e5-5564ad1fcebf.usrfiles.com/ugd/50072f_d5d96fd8c8d74907b0b5d12b4346fd44.xlsx|셔틀 노선도>*\n"
-            f"*첨부:two: - <https://50072f98-e1d6-4b35-b1e5-5564ad1fcebf.usrfiles.com/ugd/50072f_afe8d11944634340a029db21281073db.pptx|셔틀 노선 및 경유지 상세 이미지 포함>*\n"
-            f"*첨부:three: - <https://50072f98-e1d6-4b35-b1e5-5564ad1fcebf.usrfiles.com/ugd/50072f_da35046d65e042dcb76665be70299ba7.pdf|셔틀 승,하차 장소>*\n"
-            f"*첨부:four: - <https://50072f98-e1d6-4b35-b1e5-5564ad1fcebf.usrfiles.com/ugd/50072f_b72245b692984e838e89f72711e2aea8.pdf|셔틀 어플 사용 안내>*\n"
-            f"*첨부:five: - <https://static.wixstatic.com/media/50072f_db56f7e4de6a4f3a9941f4b2b0d55c6a~mv2.png|셔틀 （퇴근）출발 시간 안내>*\n\n"
+            f":체크1: *<지게차 A/S 양식>*\n\n"
+            f":one: 이름 : 김컬리\n"
+            f":two: 부서 : 인사총무팀 총무/시설\n"
+            f":three: 장비 : 카운터 / 리치 / EPT _ 각 장비 번호\n"
+            f":four: 장소 : 현재 A/S 필요 장비의 위치를 기입\n"
+            f":five: 증상 : 현재 A/S 필요 장비의 증상 상세하게 설명 _ 사진 첨부 필수\n"
+            f"\n\n"
+            f":alert: *<중요사항>* :alert: \n"
+            f"> - 스마트랙 핀번호를 입력 하는 기기는 *핀번호 입력 외 임의 조작,과도하게 꺽음 등 행동 절대 금지*\n"
+            f"\n\n"
+            f"📌 지게차 핀번호 관련사항은 EHS_평택 담당자분들께 문의 부탁드립니다.\n"
+            f"📌 지게차 A/S의 경우 평일에만 진행되며, 주말 및 공휴일의 경우 휴무입니다.\n"
             f"\n"
-            f"\n"
-            f"*자세한 자료는 :point_up: :point_up: 클릭하여 확인 부탁드립니다!*\n\n"
-            f"*문의사항 : 인사총무팀 총무/시설 담당자*\n\n"
+            f":slack: *문의사항*\n"
+            f"인사총무팀_총무/시설 담당자 : <@U05NXEAL43E> <@U04RT8X7D9N> <@U07QC9WQ8JX>\n\n"
             f"감사합니다.\n"
        )
  
